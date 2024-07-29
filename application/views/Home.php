@@ -28,6 +28,7 @@
         </div>
       </div>
     </nav>
+    <a href="<?= base_url("Login");?>">Home</a>
   </div>
 
   <!-- Optional JavaScript -->
