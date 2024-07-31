@@ -11,7 +11,9 @@ class Auth extends CI_Controller
     $data = [
       "title" => "Login Page",
     ];
-    $this->load->view('Auth/Login', $data);
+    $this->load->view('Templates/Auth/Header', $data);
+    $this->load->view('Auth/Login');
+    $this->load->view('Templates/Auth/Footer');
   }
 
   public function _Login()
@@ -24,6 +26,12 @@ class Auth extends CI_Controller
 
   public function regis()
   {
+    $data = [
+      "title" => "Regis Page",
+    ];
+
+    $this->load->view('Templates/Auth/Header', $data);
     $this->load->view('Auth/Regist');
+    $this->load->view('Templates/Auth/Footer');
   }
 }
