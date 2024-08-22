@@ -10,7 +10,7 @@
           <h3 class="text-bold">SIPW</h3>
         </div>
         <p class="login-box-msg">Silahkan Login</p>
-        <form action="<?= base_url("")?>" method="post">
+        <form action="<?= base_url("Login")?>" method="post">
           <div class="input-group mb-3">
             <input type="email" class="form-control form-control-lg" placeholder="Email">
             <div class="input-group-append">
@@ -39,7 +39,7 @@
         <hr class="mt-3">
 
         <p class="mb-1">
-          <a href="<?= base_url("Regis")?>">Registrasi</a>
+          <a href="<?= base_url("Admin")?>">Registrasi</a>
         </p>
       </div>
       <!-- /.card-body -->
