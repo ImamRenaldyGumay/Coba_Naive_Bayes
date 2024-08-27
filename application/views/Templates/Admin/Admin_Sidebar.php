@@ -25,11 +25,11 @@ $segment2 = $this->uri->segment(2);
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-header">LABELS</li>
+            <!-- <li class="nav-header">LABELS</li> -->
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('Ruangan')?>" class="nav-link <?= ($segment1 == 'Ruangan' && $segment2 == "") ? 'active': "" ?>">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>Dashboard</p>
+                    <p>Ruangan</p>
                 </a>
             </li>
         </ul>

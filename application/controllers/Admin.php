@@ -10,9 +10,7 @@ class Admin extends CI_Controller {
 
     public function index() {
         $data = [
-            'title' => 'Admin Dashboard',
-            'heading' => 'Welcome to the Admin Dashboard',
-            'user_name' => 'John Doe' // Replace with actual user name
+            'title' => 'Admin Dashboard'
         ];
         $this->load->view('Templates/Admin/Admin_Header', $data);
         $this->load->view('Templates/Admin/Admin_Sidebar');
@@ -20,7 +18,15 @@ class Admin extends CI_Controller {
         $this->load->view('Templates/Admin/Admin_Footer');
     }
 
-    // public function
+    public function ruangan(){
+        $data = [
+            'title' => 'Ruangan'
+        ];
+        $this->load->view('Templates/Admin/Admin_Header', $data);
+        $this->load->view('templates/Admin/Admin_Sidebar');
+        $this->load->view('admin/ruangan');
+        $this->load->view('templates/Admin/Admin_Footer');
+    }
 }
 
 ?>

@@ -8,10 +8,10 @@ class Auth extends CI_Controller
     $this->load->model('Auth_model');
   }
 
-  public function Login()
+  public function index()
   {
-    $this->form_validation->set_rules('Username','username', 'required');
-    $this->form_validation->set_rules('Password','password', 'required');
+    $this->form_validation->set_rules('email','Email', 'required');
+    $this->form_validation->set_rules('password','Password', 'required');
     if ($this->form_validation->run() == FALSE){
       $data = [
         "title" => "Login Page",
@@ -26,15 +26,26 @@ class Auth extends CI_Controller
 
   public function ProcessLogin()
   {
-    $data = array(
-      'email' => $this->input->post('email'),
-      'password' => md5($this->input->post('password', TRUE))
-    );
+    // $data = array(
+    //   'email'     => $this->input->post('email'),
+    //   'password'  => $this->input->post('password')
+    // );
+    $email    = $this->input->post('email');
+    $password = $this->input->post('password');
 
     $admin = $this->Auth_model->getUserUcl($email, $password);
-
-    if($admin->num_rows() > 0){
-      
+    if($admin){
+      $userdata = [
+        'email' => $admin['email'],
+        'nama' => $admin['name'],
+        'logged_in' => TRUE
+      ];
+      $this->session->set_flashdata('login_success', 'Selamat datang, ' . $email . '!');
+      $this->session->set_userdata($userdata);
+      redirect('Admin');
+    }else{
+      $this->session->set_flashdata('login_failed', 'Username atau password salah');
+      redirect('Login');
     }
   }
 
@@ -51,6 +62,7 @@ class Auth extends CI_Controller
 
   public function logout(){
     $this->session->sess_destroy();
+    $this->session->set_flashdata('logout_success', 'Anda telah logout');
     redirect('Login');
   }
 }

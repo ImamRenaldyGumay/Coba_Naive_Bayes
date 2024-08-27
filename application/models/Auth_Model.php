@@ -9,9 +9,9 @@ class Auth_Model extends CI_Model
 
     public function getUserUcl($email, $password){
         $this->db->where('email', $email);
-        $this->db->where('password', $password);
-        $query = $this->db->get('Ucl');
-        return $query->row();
+        $this->db->where('password', md5($password));
+        $query = $this->db->get('acl');
+        return $query->row_array();
     }
 }
 

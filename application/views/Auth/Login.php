@@ -12,7 +12,7 @@
         <p class="login-box-msg">Silahkan Login</p>
         <form action="<?= base_url("Login")?>" method="post">
           <div class="input-group mb-3">
-            <input type="email" class="form-control form-control-lg" placeholder="Email">
+            <input type="email" name="email" id="email" required class="form-control form-control-lg" placeholder="Email">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control form-control-lg" placeholder="Password">
+            <input type="password" name="password" id="password" required class="form-control form-control-lg" placeholder="Password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -47,4 +47,27 @@
     <!-- /.card -->
   </div>
   <!-- /.login-box -->
+  <!-- Notifikasi Login -->
+    <script>
+      <?php if($this->session->flashdata('login_success')): ?>
+        Swal.fire({
+          icon: 'success',
+          title: 'Login Berhasil',
+          text: '<?php echo $this->session->flashdata('login_success'); ?>',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      <?php endif; ?>
+
+      <?php if($this->session->flashdata('login_failed')): ?>
+          Swal.fire({
+              icon: 'error',
+              title: 'Login Gagal',
+              text: '<?php echo $this->session->flashdata('login_failed'); ?>',
+              showConfirmButton: false,
+              timer: 1500
+          });
+      <?php endif; ?>
+    </script>
+<!-- Notifikasi Login -->
 

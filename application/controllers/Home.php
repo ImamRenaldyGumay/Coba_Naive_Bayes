@@ -10,4 +10,8 @@ class Home extends CI_Controller
   {
     $this->load->view('Home');
   }
+
+  public function home2(){
+    $this->load->view('Home2');
+  }
 }

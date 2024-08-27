@@ -1,41 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <title>Hello, world!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<body class="bg-gray-100">
 
-<body>
-  <div class="container my-2">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="https://img2.pngdownload.id/20190216/vxz/kisspng-sriwijaya-university-syiah-kuala-university-univer-5c68131862ec27.2474890115503245044052.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-        Bootstrap
-      </a>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="w-64 h-screen bg-gray-800 text-white flex flex-col">
+            <div class="p-4 text-center bg-gray-900">
+                <h1 class="text-xl font-bold">Admin Dashboard</h1>
+            </div>
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="<?= base_url('Home/home2')?>" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
+                    <i class="fas fa-users"></i> Users
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
+                    <i class="fas fa-file-alt"></i> Reports
+                </a>
+                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <header class="bg-white shadow">
+                <div class="px-6 py-4 flex justify-between items-center">
+                    <h2 class="text-lg font-semibold text-gray-800">Dashboard</h2>
+                    <div class="flex items-center space-x-4">
+                        <button class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <button class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                        <button class="text-gray-600 hover:text-gray-800">
+                            <i class="fas fa-user-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="flex-1 p-6 bg-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="p-4 bg-white shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Users</h3>
+                        <p class="text-gray-600 mt-2">Total: 1500</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="p-4 bg-white shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Revenue</h3>
+                        <p class="text-gray-600 mt-2">$25,000</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="p-4 bg-white shadow rounded-lg">
+                        <h3 class="text-lg font-semibold">Tasks</h3>
+                        <p class="text-gray-600 mt-2">Completed: 75%</p>
+                    </div>
+                </div>
+            </main>
         </div>
-      </div>
-    </nav>
-    <a href="<?= base_url("Login");?>">Home</a>
-  </div>
+    </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- FontAwesome CDN for Icons (optional) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -10,7 +10,7 @@
           <h3 class="text-bold">SIPW</h3>
         </div>
         <p class="login-box-msg">Silahkan Registrasi</p>
-        <form action="<?= base_url("")?>" method="post">
+        <form action="<?= base_url("Regis")?>" method="post">
           <div class="input-group mb-3">
             <input type="email" class="form-control form-control-lg" placeholder="Email">
             <div class="input-group-append">
