@@ -26,10 +26,6 @@ class Auth extends CI_Controller
 
   public function ProcessLogin()
   {
-    // $data = array(
-    //   'email'     => $this->input->post('email'),
-    //   'password'  => $this->input->post('password')
-    // );
     $email    = $this->input->post('email');
     $password = $this->input->post('password');
 
@@ -40,11 +36,11 @@ class Auth extends CI_Controller
         'nama' => $admin['name'],
         'logged_in' => TRUE
       ];
-      $this->session->set_flashdata('login_success', 'Selamat datang, ' . $email . '!');
       $this->session->set_userdata($userdata);
+      $this->session->set_flashdata('success', 'Selamat datang, ' . $userdata['nama'] . '!');
       redirect('Admin');
     }else{
-      $this->session->set_flashdata('login_failed', 'Username atau password salah');
+      $this->session->set_flashdata('error', 'Username atau password salah!');
       redirect('Login');
     }
   }
@@ -62,7 +58,7 @@ class Auth extends CI_Controller
 
   public function logout(){
     $this->session->sess_destroy();
-    $this->session->set_flashdata('logout_success', 'Anda telah logout');
+    $this->session->set_flashdata('success', 'Anda telah keluar.');
     redirect('Login');
   }
 }

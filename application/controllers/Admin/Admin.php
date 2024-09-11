@@ -5,6 +5,11 @@ class Admin extends CI_Controller {
     public function __construct() {
         parent::__construct();
         // $this->load->model('Admin_model');
+        // Pengecekan sesi, apakah user sudah login atau belum
+        if (!$this->session->userdata('logged_in')) {
+            // Jika user belum login, redirect ke halaman login
+            redirect('Login', 'refresh');
+        }
         $this->load->helper('url');
     }
 
@@ -16,16 +21,6 @@ class Admin extends CI_Controller {
         $this->load->view('Templates/Admin/Admin_Sidebar');
         $this->load->view('admin/index');
         $this->load->view('Templates/Admin/Admin_Footer');
-    }
-
-    public function ruangan(){
-        $data = [
-            'title' => 'Ruangan'
-        ];
-        $this->load->view('Templates/Admin/Admin_Header', $data);
-        $this->load->view('templates/Admin/Admin_Sidebar');
-        $this->load->view('admin/ruangan');
-        $this->load->view('templates/Admin/Admin_Footer');
     }
 }
 

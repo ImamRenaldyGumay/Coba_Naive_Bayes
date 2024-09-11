@@ -32,6 +32,13 @@ $segment2 = $this->uri->segment(2);
                     <p>Ruangan</p>
                 </a>
             </li>
+            <li class="nav-header">USER</li>
+            <li class="nav-item">
+                <a href="<?= base_url('User')?>" class="nav-link <?= ($segment1 == 'User' && $segment2 == "") ? 'active': "" ?>">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>Users</p>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- /.sidebar-menu -->

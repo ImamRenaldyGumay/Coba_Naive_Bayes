@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="<?= base_url('Assets/')?>plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url('Assets/')?>dist/css/adminlte.min.css">
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -54,7 +58,7 @@
         <li class="nav-item dropdown user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
             <img src="<?= base_url('Assets/')?>dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
-            <span class="d-none d-md-inline">Alexander Pierce</span>
+            <span class="d-none d-md-inline"><?= $this->session->userdata('nama')?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <!-- User image -->
@@ -62,7 +66,7 @@
               <img src="<?= base_url('Assets/')?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 
               <p>
-                Alexander Pierce - Web Developer
+                <?= $this->session->userdata('nama')?>
                 <small>Member since Nov. 2012</small>
               </p>
             </li>

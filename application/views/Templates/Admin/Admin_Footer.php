@@ -11,6 +11,19 @@
   </div>
   <!-- ./wrapper -->
 
+  <!-- SweetAlert2 Script -->
+    <!-- <script>
+        <?php if ($this->session->flashdata('success')): ?>
+            Swal.fire({
+                title: 'Success!',
+                text: "<?php echo $this->session->flashdata('success'); ?>",
+                icon: 'success'
+            });
+        <?php endif; ?>
+    </script> -->
+    <?php if ($this->session->flashdata('success')): ?>
+      <script>alert("<?php echo $this->session->flashdata('success'); ?>");</script>
+    <?php endif; ?>
   <!-- jQuery -->
   <script src="<?= base_url('Assets/')?>plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
