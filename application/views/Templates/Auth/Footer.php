@@ -1,35 +1,33 @@
 
-        <!-- SweetAlert2 Script -->
-        <!-- <script>
-            <?php if ($this->session->flashdata('success')): ?>
-                Swal.fire({
-                    title: 'Success!',
-                    text: "<?php echo $this->session->flashdata('success'); ?>",
-                    icon: 'success'
+        <!-- SweetAlert Flash Data -->
+        <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flashdata'); ?>"></div>
+        <div class="flash-data-gagal" data-flashdata="<?= $this->session->flashdata('flashdata_gagal'); ?>"></div>
+        <!-- Alert untuk pesan -->
+         <script>
+            const flashdata = $('.flash-data').data('flashdata');
+            if (flashdata){
+                Swal({
+                    title:"Sukses",
+                    text:"Data Berhasil" + flashdata,
+                    type:"success"
                 });
-            <?php endif; ?>
-
-            <?php if ($this->session->flashdata('error')): ?>
+            }
+            const flashGagal = $('.flash-data-gagal').data('flashdata');
+            if (flashGagal) {
                 Swal.fire({
-                    title: 'Error!',
-                    text: "<?php echo $this->session->flashdata('error'); ?>",
+                    title: 'Gagal',
+                    text: 'Login Gagal',
                     icon: 'error'
                 });
-            <?php endif; ?>
-        </script> -->
-        <!-- Alert untuk pesan -->
-        <?php if ($this->session->flashdata('success')): ?>
-            <script>alert("<?php echo $this->session->flashdata('success'); ?>");</script>
-        <?php endif; ?>
-
-        <?php if ($this->session->flashdata('error')): ?>
-            <script>alert("<?php echo $this->session->flashdata('error'); ?>");</script>
-        <?php endif; ?>
+            }
+         </script>
+                
         <!-- jQuery -->
         <script src="<?= base_url('assets')?>/plugins/jquery/jquery.min.js"></script>
         <!-- Bootstrap 4 -->
         <script src="<?= base_url('assets')?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
         <script src="<?= base_url('assets')?>/dist/js/adminlte.min.js"></script>
+        
     </body>
 </html>

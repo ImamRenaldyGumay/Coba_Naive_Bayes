@@ -58,6 +58,16 @@ $route["Login"] = "Auth/index";
 $route["Regis"] = "Auth/regis";
 $route['Logout'] = "Auth/logout";
 
+// Start Admin Routes
 $route['Admin'] = "Admin/Admin/index";
+// End Admin Routes
+
+// Start Ruangan Routes
 $route['Ruangan'] = 'Admin/Ruangan/index';
+$route['TambahRuang'] = 'Admin/Ruangan/TambahRuangan';
+$route['DeleteRuangan/(:num)'] = 'Ruangan/delete/$1';
+// End Ruangan Routes
+
+// Start User Routes
 $route['User'] = 'Admin/User/index';
+// End User Routes

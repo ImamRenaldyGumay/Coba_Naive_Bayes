@@ -36,11 +36,11 @@ class Auth extends CI_Controller
         'nama' => $admin['name'],
         'logged_in' => TRUE
       ];
+      $this->session->set_flashdata('flashdata', 'Selamat datang!');
       $this->session->set_userdata($userdata);
-      $this->session->set_flashdata('success', 'Selamat datang, ' . $userdata['nama'] . '!');
       redirect('Admin');
     }else{
-      $this->session->set_flashdata('error', 'Username atau password salah!');
+      $this->session->set_flashdata('flashdata_gagal', 'Username atau password salah!');
       redirect('Login');
     }
   }
@@ -58,7 +58,7 @@ class Auth extends CI_Controller
 
   public function logout(){
     $this->session->sess_destroy();
-    $this->session->set_flashdata('success', 'Anda telah keluar.');
+    $this->session->set_flashdata('flashdata', 'Anda telah keluar.');
     redirect('Login');
   }
 }
