@@ -22,8 +22,8 @@
           <div class="input-group mb-3">
             <input type="password" name="password" id="password" required class="form-control form-control-lg" placeholder="Password">
             <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+              <div class="input-group-text btn btn-outline-secondary" type="buttton" onclick="togglePassword()">
+                <span class="fas fa-eye"></span>
               </div>
             </div>
           </div>

@@ -1,84 +1,124 @@
+<!-- HTML -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?= $title ?></title>
+  <!-- Menyertakan Tailwind CSS dari CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Menambahkan scroll-margin-top untuk sektion agar tidak tertutup navbar */
+    section {
+      scroll-margin-top: 64px; /* Sesuaikan dengan tinggi navbar */
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
-
-    <!-- Sidebar -->
-    <div class="flex">
-        <aside class="w-64 h-screen bg-gray-800 text-white flex flex-col">
-            <div class="p-4 text-center bg-gray-900">
-                <h1 class="text-xl font-bold">Admin Dashboard</h1>
-            </div>
-            <nav class="flex-1 px-4 py-6 space-y-2">
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
-                    <i class="fas fa-home"></i> Dashboard
-                </a>
-                <a href="<?= base_url('Home/home2')?>" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
-                    <i class="fas fa-users"></i> Users
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
-                    <i class="fas fa-cog"></i> Settings
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
-                    <i class="fas fa-file-alt"></i> Reports
-                </a>
-                <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
-            </nav>
-        </aside>
-
-        <!-- Content -->
-        <div class="flex-1 flex flex-col">
-            <!-- Navbar -->
-            <header class="bg-white shadow">
-                <div class="px-6 py-4 flex justify-between items-center">
-                    <h2 class="text-lg font-semibold text-gray-800">Dashboard</h2>
-                    <div class="flex items-center space-x-4">
-                        <button class="text-gray-600 hover:text-gray-800">
-                            <i class="fas fa-bell"></i>
-                        </button>
-                        <button class="text-gray-600 hover:text-gray-800">
-                            <i class="fas fa-envelope"></i>
-                        </button>
-                        <button class="text-gray-600 hover:text-gray-800">
-                            <i class="fas fa-user-circle"></i>
-                        </button>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Main Content -->
-            <main class="flex-1 p-6 bg-gray-100">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Card 1 -->
-                    <div class="p-4 bg-white shadow rounded-lg">
-                        <h3 class="text-lg font-semibold">Users</h3>
-                        <p class="text-gray-600 mt-2">Total: 1500</p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="p-4 bg-white shadow rounded-lg">
-                        <h3 class="text-lg font-semibold">Revenue</h3>
-                        <p class="text-gray-600 mt-2">$25,000</p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="p-4 bg-white shadow rounded-lg">
-                        <h3 class="text-lg font-semibold">Tasks</h3>
-                        <p class="text-gray-600 mt-2">Completed: 75%</p>
-                    </div>
-                </div>
-            </main>
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-blue-600 text-white shadow-md z-50">
+        <div class="container mx-auto max-w-6xl flex justify-between items-center p-4">
+        <div class="text-lg font-bold">MyWebsite</div>
+        <div class="space-x-4">
+            <a href="#home" class="hover:bg-blue-700 px-3 py-2 rounded">Home</a>
+            <a href="#about" class="hover:bg-blue-700 px-3 py-2 rounded">About</a>
+            <a href="#services" class="hover:bg-blue-700 px-3 py-2 rounded">Services</a>
+            <a href="#contact" class="hover:bg-blue-700 px-3 py-2 rounded">Contact</a>
+            <button class="bg-blue-400 hover:bg-blue-700 px-3 py-2 rounded">
+                <a href="<?= base_url('Auth')?>">Login</a>
+            </button>
         </div>
-    </div>
+        </div>
+    </nav>
+    
+    <!-- Seksi Home -->
+    <section id="home" class="pt-20 h-screen bg-gray-200">
+        <div class="container mx-auto max-w-6xl flex flex-col items-center justify-center h-full">
+        <h1 class="text-4xl font-bold mb-4">Workshop PT Pusri</h1>
+        <p class="text-lg">Tingkatkan keterampilan Anda bersama kami!</p>
+        </div>
+    </section>
 
-    <!-- FontAwesome CDN for Icons (optional) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Seksi About -->
+    <section id="about" class="h-screen bg-gray-300">
+        <div class="container mx-auto max-w-6xl flex flex-col items-center justify-center h-full">
+        <h1 class="text-4xl font-bold mb-4">Tentang PT Pusri</h1>
+        <p class="text-lg">PT Pupuk Sriwidjaja Palembang (Pusri) adalah salah satu perusahaan pupuk terbesar di Indonesia. Kami berkomitmen untuk menyediakan pelatihan berkualitas tinggi bagi para pekerja di industri pertanian dan manufaktur.</p>
+        </div>
+    </section>
+
+    <!-- Seksi Services -->
+    <section id="services" class="h-screen bg-gray-400">
+        <div class="container mx-auto max-w-6xl flex flex-col items-center justify-center h-full">
+        <h1 class="text-4xl font-bold mb-4">Jadwal Workshop</h1>
+        <div class="flex gap-4 mt-5">
+
+            <a href="">
+                <div class="card bg-white rounded-lg shadow max-w-sm hover:bg-gray-100">
+                    <div class="card-body p-10">
+                        <h5 class="card-title">Workshop Pertanian Berkelanjutan</h5>
+                        <p class="card-text">Tanggal: 15 Oktober 2024</p>
+                        <p class="card-text">Lokasi: Palembang</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="">
+                <div class="card bg-white rounded-lg shadow max-w-sm hover:bg-gray-100">
+                    <div class="card-body p-10">
+                        <h5 class="card-title">Workshop Teknik Pemupukan</h5>
+                        <p class="card-text">Tanggal: 20 Oktober 2024</p>
+                        <p class="card-text">Lokasi: Jakarta</p>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="">
+                <div class="card bg-white rounded-lg shadow min-w-sm max-w-sm hover:bg-gray-100">
+                    <div class="card-body p-10">
+                        <h5 class="card-title">Workshop Inovasi Industri</h5>
+                        <p class="card-text">Tanggal: 25 Oktober 2024</p>
+                        <p class="card-text">Lokasi: Surabaya</p>
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+        </div>
+    </section>
+
+    <!-- Seksi Contact -->
+    <section id="contact" class="h-screen bg-gray-500">
+        <div class="container mx-auto flex flex-col items-center justify-center h-full">
+        <h1 class="text-4xl font-bold mb-4">Daftar Workshop</h1>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap Anda">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda">
+            </div>
+            <div class="mb-3">
+                <label for="workshop" class="form-label">Pilih Workshop</label>
+                <select class="form-select" id="workshop">
+                    <option selected>Pilih workshop</option>
+                    <option value="1">Workshop Pertanian Berkelanjutan - Palembang</option>
+                    <option value="2">Workshop Teknik Pemupukan - Jakarta</option>
+                    <option value="3">Workshop Inovasi Industri - Surabaya</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+        </form>
+        </div>
+    </section>
+
+    <footer class="text-white text-center py-3 bg-gray-700">
+        <div class="container">
+            <p class="mb-0">© 2024 PT Pusri. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

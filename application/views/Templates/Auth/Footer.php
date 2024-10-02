@@ -3,6 +3,20 @@
         <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flashdata'); ?>"></div>
         <div class="flash-data-gagal" data-flashdata="<?= $this->session->flashdata('flashdata_gagal'); ?>"></div>
         <!-- Alert untuk pesan -->
+        <script>
+            function togglePassword() {
+                var passwordField = document.getElementById("password");
+                var eyeIcon = document.getElementById("eyeIcon");
+
+                if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.setAttribute("fill", "#000"); // Mengubah warna ikon saat aktif
+                } else {
+                passwordField.type = "password";
+                eyeIcon.setAttribute("fill", "none"); // Kembali ke warna default
+                }
+            }
+        </script>
          <script>
             const flashdata = $('.flash-data').data('flashdata');
             if (flashdata){
