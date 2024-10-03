@@ -5,7 +5,7 @@ class Departemen extends CI_Controller
 {
     function __construct(){
         parent::__construct();
-        $this->load->model('Departemen_model', 'DM');
+        $this->load->model('Departemen_Model', 'DM');
 
         if (!$this->session->userdata('logged_in')) {
             redirect('Login', 'refresh');
