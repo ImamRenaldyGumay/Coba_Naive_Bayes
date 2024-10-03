@@ -5,7 +5,7 @@ class Auth extends CI_Controller
   public function __construct()
   {
     parent::__construct();
-    $this->load->model('Auth_Model');
+    $this->load->model('Auth_Model', 'AM');
   }
 
   public function index()
@@ -29,7 +29,7 @@ class Auth extends CI_Controller
     $email    = $this->input->post('email');
     $password = $this->input->post('password');
 
-    $admin = $this->Auth_model->getUserUcl($email, $password);
+    $admin = $this->AM->getUserUcl($email, $password);
     if($admin){
       $userdata = [
         'email' => $admin['email'],
