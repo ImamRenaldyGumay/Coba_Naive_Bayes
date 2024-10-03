@@ -19,7 +19,7 @@ class Admin extends CI_Controller {
         ];
         $this->load->view('Templates/Admin_Header', $data);
         $this->load->view('Templates/Admin_Sidebar');
-        $this->load->view('admin/index');
+        $this->load->view('Admin/index');
         $this->load->view('Templates/Admin_Footer');
     }
 }
