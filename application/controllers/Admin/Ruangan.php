@@ -16,10 +16,10 @@ class Ruangan extends CI_Controller
     public function index() {
         $data['title'] = 'Ruangan Page';
         $data['ruangan'] = $this->RM->getAll();
-        $this->load->view('Templates/Admin/Admin_Header', $data);
-        $this->load->view('templates/Admin/Admin_Sidebar');
+        $this->load->view('Templates/Admin_Header', $data);
+        $this->load->view('templates/Admin_Sidebar');
         $this->load->view('admin/ruangan', $data);
-        $this->load->view('templates/Admin/Admin_Footer');
+        $this->load->view('templates/Admin_Footer');
     }
 
     public function TambahRuangan(){

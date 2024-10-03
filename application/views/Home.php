@@ -7,12 +7,7 @@
   <title><?= $title ?></title>
   <!-- Menyertakan Tailwind CSS dari CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* Menambahkan scroll-margin-top untuk sektion agar tidak tertutup navbar */
-    section {
-      scroll-margin-top: 64px; /* Sesuaikan dengan tinggi navbar */
-    }
-  </style>
+  <link rel="stylesheet" href="<?= base_url('assets/home/css/home-css.css')?>">
 </head>
 <body class="bg-gray-100">
     <!-- Navbar -->

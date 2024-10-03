@@ -16,9 +16,9 @@ class Auth extends CI_Controller
       $data = [
         "title" => "Login Page",
       ];
-      $this->load->view('Templates/Auth/Header', $data);
+      $this->load->view('Templates/Auth_Header', $data);
       $this->load->view('Auth/Login');
-      $this->load->view('Templates/Auth/Footer');
+      $this->load->view('Templates/Auth_Footer');
     }else{
       $this->ProcessLogin();
     }
@@ -51,9 +51,9 @@ class Auth extends CI_Controller
       "title" => "Regis Page",
     ];
 
-    $this->load->view('Templates/Auth/Header', $data);
+    $this->load->view('Templates/Auth_Header', $data);
     $this->load->view('Auth/Regist');
-    $this->load->view('Templates/Auth/Footer');
+    $this->load->view('Templates/Auth_Footer');
   }
 
   public function logout(){

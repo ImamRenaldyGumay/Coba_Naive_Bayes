@@ -39,7 +39,7 @@
         <hr class="mt-3">
 
         <p class="mb-1">
-          <a href="<?= base_url("Admin")?>">Registrasi</a>
+          <a href="<?= base_url("Regis")?>">Registrasi</a>
         </p>
       </div>
       <!-- /.card-body -->

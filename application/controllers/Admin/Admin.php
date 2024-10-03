@@ -17,10 +17,10 @@ class Admin extends CI_Controller {
         $data = [
             'title' => 'Admin Dashboard'
         ];
-        $this->load->view('Templates/Admin/Admin_Header', $data);
-        $this->load->view('Templates/Admin/Admin_Sidebar');
+        $this->load->view('Templates/Admin_Header', $data);
+        $this->load->view('Templates/Admin_Sidebar');
         $this->load->view('admin/index');
-        $this->load->view('Templates/Admin/Admin_Footer');
+        $this->load->view('Templates/Admin_Footer');
     }
 }
 
