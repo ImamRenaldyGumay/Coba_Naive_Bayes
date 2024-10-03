@@ -10,9 +10,9 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?= base_url('Assets/')?>plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/')?>plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?= base_url('Assets/')?>dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?= base_url('assets/')?>dist/css/adminlte.min.css">
   <!-- SweetAlert2 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   <!-- SweetAlert2 JS -->
@@ -37,13 +37,13 @@
         <!-- Navbar Search -->
         <li class="nav-item dropdown user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            <img src="<?= base_url('Assets/')?>dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
+            <img src="<?= base_url('assets/')?>dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" alt="User Image">
             <span class="d-none d-md-inline"><?= $this->session->userdata('nama')?></span>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <!-- User image -->
             <li class="user-header bg-primary">
-              <img src="<?= base_url('Assets/')?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+              <img src="<?= base_url('assets/')?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 
               <p>
                 <?= $this->session->userdata('nama')?>
