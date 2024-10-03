@@ -68,6 +68,10 @@ $route['TambahRuang'] = 'Admin/Ruangan/TambahRuangan';
 $route['DeleteRuangan/(:num)'] = 'Ruangan/delete/$1';
 // End Ruangan Routes
 
+// Start Department Routes
+$route['Departemen'] = 'Admin/Departemen/index';
+// End Department Routes
+
 // Start User Routes
 $route['User'] = 'Admin/User/index';
 // End User Routes

@@ -25,13 +25,31 @@ $segment2 = $this->uri->segment(2);
                     <p>Dashboard</p>
                 </a>
             </li>
-            <!-- <li class="nav-header">LABELS</li> -->
-            <li class="nav-item">
-                <a href="<?= base_url('Ruangan')?>" class="nav-link <?= ($segment1 == 'Ruangan' && $segment2 == "") ? 'active': "" ?>">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>Ruangan</p>
+            <li class="nav-header">LABELS</li>
+            <li class="nav-item <?= ($segment1 == 'Ruangan' && $segment2 == 'Departemen') ? 'menu-open' : "" ?>">
+                <a href="#" class="nav-link <?= ($segment1 == 'Ruangan' && $segment2 == 'Departemen') ? 'active' : "" ?>">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                    Starter Pages
+                    <i class="right fas fa-angle-left"></i>
+                </p>
                 </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?= base_url('Ruangan')?>" class="nav-link <?= ($segment1 == 'Ruangan' && $segment2 == "") ? 'active': "" ?>">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Ruangan</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('Departemen')?>" class="nav-link <?= ($segment1 == 'Departemen' && $segment2 == "") ? 'active': "" ?>">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Departemen</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
+            
             <li class="nav-header">USER</li>
             <li class="nav-item">
                 <a href="<?= base_url('User')?>" class="nav-link <?= ($segment1 == 'User' && $segment2 == "") ? 'active': "" ?>">
