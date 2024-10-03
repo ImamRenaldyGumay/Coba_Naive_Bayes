@@ -17,8 +17,6 @@ $segment2 = $this->uri->segment(2);
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <!-- Add icons to the links using the .nav-icon class
-            with font-awesome or any other icon font library -->
             <li class="nav-item">
                 <a href="<?= site_url('Admin')?>" class="nav-link <?= ($segment1 == 'Admin' && $segment2 == "") ? 'active': ""; ?>">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -27,7 +25,7 @@ $segment2 = $this->uri->segment(2);
             </li>
             <li class="nav-header">LABELS</li>
             <li class="nav-item <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'menu-open' : "" ?>">
-                <a href="#" class="nav-link <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'active' : "" ?>">
+                <a class="nav-link <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'active' : "" ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                     Starter Pages
