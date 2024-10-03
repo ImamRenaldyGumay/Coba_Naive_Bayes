@@ -17,9 +17,9 @@ class Ruangan extends CI_Controller
         $data['title'] = 'Ruangan Page';
         $data['ruangan'] = $this->RM->getAll();
         $this->load->view('Templates/Admin_Header', $data);
-        $this->load->view('templates/Admin_Sidebar');
+        $this->load->view('Templates/Admin_Sidebar');
         $this->load->view('Admin/ruangan', $data);
-        $this->load->view('templates/Admin_Footer');
+        $this->load->view('Templates/Admin_Footer');
     }
 
     public function TambahRuangan(){
