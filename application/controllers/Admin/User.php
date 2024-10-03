@@ -18,7 +18,7 @@ class User extends CI_Controller {
         ];
         $this->load->view('Templates/Admin_Header', $data);
         $this->load->view('Templates/Admin_Sidebar');
-        $this->load->view('admin/user');
+        $this->load->view('Admin/user');
         $this->load->view('Templates/Admin_Footer');
     }
 }

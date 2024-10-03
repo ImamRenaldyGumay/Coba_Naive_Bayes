@@ -18,7 +18,7 @@ class Departemen extends CI_Controller
         $data['departemen'] = $this->DM->getAll();
         $this->load->view('Templates/Admin_Header', $data);
         $this->load->view('Templates/Admin_Sidebar');
-        $this->load->view('admin/departemen', $data);
+        $this->load->view('Admin/departemen', $data);
         $this->load->view('Templates/Admin_Footer');
     }
 }
