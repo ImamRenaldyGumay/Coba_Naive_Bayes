@@ -28,20 +28,20 @@ $segment2 = $this->uri->segment(2);
                 <a class="nav-link <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'active' : "" ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Starter Pages
+                    Master Menu
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="<?= base_url('Ruangan')?>" class="nav-link <?= ($this->uri->uri_string() == 'Ruangan') ? 'active': "" ?>">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="far fa-circle nav-icon"></i>
                             <p>Ruangan</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('Departemen')?>" class="nav-link <?= ($this->uri->uri_string() == 'Departemen') ? 'active': "" ?>">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="far fa-circle nav-icon"></i>
                             <p>Departemen</p>
                         </a>
                     </li>

@@ -14,7 +14,7 @@ class Departemen extends CI_Controller
     }
 
     public function index() {
-        $data['title'] = 'Ruangan Page';
+        $data['title'] = 'Halaman Departemen';
         $data['departemen'] = $this->DM->getAll();
         $this->load->view('Templates/Admin_Header', $data);
         $this->load->view('Templates/Admin_Sidebar');

@@ -15,7 +15,7 @@ class Ruangan extends CI_Controller
 
     public function index() {
         $data['title'] = 'Ruangan Page';
-        $data['ruangan'] = $this->RM->getAll();
+        $data['ruangan'] = $this->RM->get_all_ruangan();
         $this->load->view('Templates/Admin_Header', $data);
         $this->load->view('Templates/Admin_Sidebar');
         $this->load->view('Admin/ruangan', $data);
