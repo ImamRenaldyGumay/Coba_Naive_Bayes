@@ -64,8 +64,9 @@ $route['Admin'] = "Admin/Admin/index";
 
 // Start Ruangan Routes
 $route['Ruangan'] = 'Admin/Ruangan/index';
+$route['EditRuangan/(:num)'] = 'Admin/Ruangan/EditRuangan/$1';
 $route['TambahRuang'] = 'Admin/Ruangan/TambahRuangan';
-$route['DeleteRuangan/(:num)'] = 'Ruangan/delete/$1';
+$route['HapusRuangan/(:num)'] = 'Admin/Ruangan/DeleteRuangan/$1';
 // End Ruangan Routes
 
 // Start Ruangan Api

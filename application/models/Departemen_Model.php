@@ -8,7 +8,7 @@ class Departemen_Model extends CI_Model {
 
     function getAll(){
         $query = $this->db->get('departemen');
-        return $query->result();
+        return $query->result_array();
     }
 }
 

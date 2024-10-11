@@ -1,50 +1,32 @@
 
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-        <!-- Default box -->
-        <div class="card">
-            <div class="card-header mb-0">
-                <h1 class="font-weight-bold">Data Ruangan</h1>
-            </div>
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Halaman Data <?= $title ?></h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="<?= base_url('Admin')?>">Dashboard</a></li>
+            <li class="breadcrumb-item active">Data <?= $title ?></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <!-- <div class="card-header">
+              
+            </div> -->
             <div class="card-body">
-                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambahRuanganModal">Tambah Data</button>
-                <table id="example2" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Nama Ruangan</th>
-                        <th>Kapasitas</th>
-                        <th>Fasilitas</th>
-                        <th>Lokasi</th>
-                        <th>Aksi</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php $no = 1;?>
-                    <?php foreach ($ruangan as $r): ?>
-                        <tr>
-                            <td><?= $no++ ?></td>
-                            <td><?= $r->nama_ruangan ?></td>
-                            <td><?= $r->kapasitas ?></td>
-                            <td><?= $r->fasilitas ?></td>
-                            <td><?= $r->lokasi ?></td>
-                            <td>
-                                <button class="btn btn-primary">Detail</button>
-                                <button class="btn btn-warning" onclick="editRuangan('<?= $r->id; ?>')" data-toggle="modal" data-target="#editRuanganModal">Edit</button>
-                                <button class="btn btn-danger btn-delete" data-id="<?= $r->id?>">Hapus</button>
-                            </td>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                  </tbody>
-                  <tfoot>
+              <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambahRuanganModal"><i class="fas fa-plus"></i>Tambah Data <?= $title ?></button>
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
                   <tr>
                     <th>No.</th>
                     <th>Nama Ruangan</th>
@@ -53,98 +35,137 @@
                     <th>Lokasi</th>
                     <th>Aksi</th>
                   </tr>
-                  </tfoot>
-                </table>
+                </thead>
+                <tbody>
+                  <?php $no = 1;?>
+                  <?php foreach ($ruangan as $r): ?>
+                      <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $r['nama_ruangan'] ?></td>
+                        <td><?= $r['kapasitas'] ?></td>
+                        <td><?= $r['fasilitas'] ?></td>
+                        <td><?= $r['lokasi'] ?></td>
+                        <td>
+                          <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#dialog1">Detail</button> -->
+                          <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editRuanganModal<?= $r['id']?>"><i class="fas fa-pencil-alt"></i>Edit</button>
+                          <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#basic<?= $r['id']?>"><i class="fas fa-trash"></i>Hapus</button>
+                        </td>
+                      </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
             </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                Footer
-            </div>
-            <!-- /.card-footer-->
+          </div>
         </div>
-        <!-- /.card -->
-
-    </section>
-    <!-- /.content -->
+      </div>
+    </div>
+  </section>
 </div>
 <!-- Start Model Tambah Ruangan -->
-<div class="modal fade" data-backdrop="static" id="tambahRuanganModal" tabindex="-1" aria-labelledby="tambahRuanganLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="tambahRuanganLabel">Tambah Ruangan</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div class="modal fade" data-backdrop="static" id="tambahRuanganModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tambahRuanganLabel">Tambah Ruangan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="<?= site_url('TambahRuang') ?>" method="post">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nama_ruangan">Nama Ruangan</label>
+              <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan" required>
+            </div>
+            <div class="form-group">
+              <label for="kapasitas">Kapasitas</label>
+              <input type="text" class="form-control" id="kapasitas" name="kapasitas" required>
+            </div>
+            <div class="form-group">
+              <label for="fasilitas">Fasilitas</label>
+              <input type="text" class="form-control" id="fasilitas" name="fasilitas" required>
+            </div>
+            <div class="form-group">
+              <label for="lokasi">Lokasi</label>
+              <input type="text" class="form-control" id="lokasi" name="lokasi" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+        </form>
       </div>
-      <form action="<?= site_url('TambahRuang') ?>" method="post">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="nama_ruangan">Nama Ruangan</label>
-            <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan" required>
-          </div>
-          <div class="form-group">
-            <label for="kapasitas">Kapasitas</label>
-            <input type="text" class="form-control" id="kapasitas" name="kapasitas" required>
-          </div>
-          <div class="form-group">
-            <label for="fasilitas">Fasilitas</label>
-            <input type="text" class="form-control" id="fasilitas" name="fasilitas" required>
-          </div>
-          <div class="form-group">
-            <label for="lokasi">Lokasi</label>
-            <input type="text" class="form-control" id="lokasi" name="lokasi" required>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
-        </div>
-      </form>
     </div>
   </div>
-</div>
 <!-- End Model Tambah Ruangan -->
  
 <!-- Start Edit Ruangan -->
-<div class="modal fade" id="editRuanganModal" tabindex="-1" aria-labelledby="editRuanganLabel" aria-hidden="true">
+  <?php foreach ($ruangan as $r) : ?>
+    <div class="modal fade" id="editRuanganModal<?= $r['id']?>">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit <? $title ?></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="editRuanganForm" action="<?= base_url('EditRuangan/'.$r['id'])?>" method="post">
+            <div class="modal-body">
+              <input type="hidden" id="edit_id" name="id">
+              <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="id" name="id" value="<?= $r['id']?>" readonly>
+              </div>
+              <div class="form-group">
+                <label for="nama_ruangan">Nama Ruangan</label>
+                <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan" value="<?= $r['nama_ruangan']?>" required>
+              </div>
+              <div class="form-group">
+                <label for="kapasitas">Kapasitas Ruangan</label>
+                <input type="text" class="form-control" id="kapasitas" name="kapasitas" value="<?= $r['kapasitas']?>" required>
+              </div>
+              <div class="form-group">
+                <label for="fasilitas">Fasilitas Ruangan</label>
+                <input type="text" class="form-control" id="fasilitas" name="fasilitas" value="<?= $r['fasilitas']?>" required>
+              </div>
+              <div class="form-group">
+                <label for="lokasi">Lokasi Ruangan</label>
+                <input type="text" class="form-control" id="lokasi" name="lokasi" value="<?= $r['lokasi']?>" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <?php endforeach ?>
+<!-- End Edit Ruangan -->
+<!-- Start Delete Modal -->
+<div class="modal fade" data-backdrop="static" id="basic<?= $r['id']?>">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editRuanganLabel">Edit Ruangan</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete Confirmation</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form id="editRuanganForm" action="" method="post"> <!-- URL akan di-set secara dinamis dengan JS -->
-        <div class="modal-body">
-          <input type="hidden" id="edit_id" name="id"> <!-- ID ruangan yang akan di-edit -->
-          <div class="form-group">
-            <label for="edit_nama_ruangan">Nama Ruangan</label>
-            <input type="text" class="form-control" id="edit_nama_ruangan" name="nama_ruangan" required>
-          </div>
-          <div class="form-group">
-            <label for="edit_lokasi">Lokasi</label>
-            <input type="text" class="form-control" id="edit_lokasi" name="lokasi" required>
-          </div>
-        </div>
+      <div class="modal-body">
+        Are you sure you want to delete this item?
+      </div>
+      <form action="DeleteRuangan">
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button data-dismiss="modal" type="button" class="btn btn-default">Cancel</button>
+          <a href="<?= base_url('HapusRuangan/'.$r['id']) ?>" class="btn btn-danger">Hapus</a>
         </div>
       </form>
     </div>
   </div>
 </div>
-<!-- End Edit Ruangan -->
+<!-- End Delete Modal -->
 <!-- /.content-wrapper -->
-<?php if ($this->session->flashdata('message')): ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: '<?= $this->session->flashdata('message'); ?>',
-            showConfirmButton: false,
-            timer: 1500
-        });
-    </script>
-<?php endif; ?>

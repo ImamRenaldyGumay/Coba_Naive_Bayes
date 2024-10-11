@@ -9,7 +9,7 @@ class Ruangan_Model extends CI_Model
 
     function get_all_ruangan(){
        $query = $this->db->get('ruangan');
-       return $query->result();
+       return $query->result_array();
     }
 
     function addData($data){
@@ -25,7 +25,7 @@ class Ruangan_Model extends CI_Model
         return $this->db->update('ruangan', $data);
     }
 
-    function delete($id){
+    function deleteData($id){
         $this->db->where('id', $id);
         return $this->db->delete('ruangan');
     }

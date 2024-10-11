@@ -14,7 +14,7 @@ class Ruangan extends CI_Controller
     }
 
     public function index() {
-        $data['title'] = 'Ruangan Page';
+        $data['title'] = 'Ruangan';
         $data['ruangan'] = $this->RM->get_all_ruangan();
         $this->load->view('Templates/Admin_Header', $data);
         $this->load->view('Templates/Admin_Sidebar');
@@ -47,26 +47,19 @@ class Ruangan extends CI_Controller
         redirect('Ruangan');
     }
 
-    public function getRuanganById($id) {
-        $data = $this->Ruangan_model->get_ruangan_by_id($id);
-        echo json_encode($data); // Kirim data dalam format JSON
-    }
-
-    public function EditRuangan($id){
+    public function EditRuangan(){
+        $id = $this->input->post('id');
         $nama_ruangan = $this->input->post('nama_ruangan');
         $kapasitas = $this->input->post('kapasitas');
         $fasilitas = $this->input->post('fasilitas');
         $lokasi = $this->input->post('lokasi');
-
         $data = [
             'nama_ruangan' => $nama_ruangan,
             'kapasitas' => $kapasitas,
             'fasilitas' => $fasilitas,
             'lokasi' => $lokasi,
-            'updated_at' => date('Y-m-d H:i:s'),
-            'pic' => 'root'
+            'updated_at' => date('Y-m-d H:i:s')
         ];
-
         $update = $this->RM->updateData($id, $data);
         if ($update) {
             $this->session->set_flashdata('message', 'Data berhasil diubah');
@@ -77,13 +70,13 @@ class Ruangan extends CI_Controller
     }
 
     public function DeleteRuangan($id){
-        $delete = $this->RM->delete($id);
+        $delete = $this->RM->deleteData($id);
         if ($delete) {
             $this->session->set_flashdata('message', 'Data berhasil dihapus');
         } else {
             $this->session->set_flashdata('message', 'Data gagal dihapus');
         }
-        redirect('ruangan');
+        redirect('Ruangan');
     }
 }
 
