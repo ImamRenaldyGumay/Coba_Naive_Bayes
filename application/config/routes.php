@@ -75,6 +75,9 @@ $route['RuanganApi']['GET'] = 'Admin/Ruangan_Api/index';
 
 // Start Department Routes
 $route['Departemen'] = 'Admin/Departemen/index';
+$route['TambahDepartmen'] = 'Admin/Departemen/tambahD';
+$route['EditDepartmen/(:num)'] = 'Admin/Departemen/editD';
+ $route['HapusDepartemen/(:num)'] = 'Admin/Departemen/hapusD/$1';
 // End Department Routes
 
 // Start User Routes
