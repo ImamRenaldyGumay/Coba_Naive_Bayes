@@ -6,6 +6,7 @@ class Pegawai extends CI_Controller
     function __construct(){
         parent::__construct();
         if (!$this->session->userdata('logged_in')) {
+            $this->session->set_flashdata('message', 'ANDA BELOM LOGIN!');
             redirect('Login', 'refresh');
         }
         $this->load->model('Pegawai_Model', 'PM');

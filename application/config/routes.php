@@ -69,6 +69,13 @@ $route['EditPegawai/(:num)'] = 'Admin/Pegawai/editP/$1';
 $route['DeletePegawai/(:num)'] = 'Admin/Pegawai/hapusP/$1';
 // End Pegawai Routes
 
+// Start Instruktur Routes
+$route['Instruktur'] = "Admin/Instruktur/index";
+$route['TambahInstruktur'] = 'Admin/Instruktur/tambahI';
+$route['EditInstruktur/(:num)'] = 'Admin/Instruktur/editI/$1';
+$route['DeleteInstruktur/(:num)'] = 'Admin/Instruktur/hapusI/$1';
+// End Instruktur Routes
+
 // Start Ruangan Routes
 $route['Ruangan'] = 'Admin/Ruangan/index';
 $route['EditRuangan/(:num)'] = 'Admin/Ruangan/EditRuangan/$1';

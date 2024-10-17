@@ -30,8 +30,8 @@ $segment2 = $this->uri->segment(2);
                 </a>
             </li>
             <li class="nav-header">LABELS</li>
-            <li class="nav-item <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'menu-open' : "" ?>">
-                <a class="nav-link <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'active' : "" ?>">
+            <li class="nav-item <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen' || $this->uri->uri_string() == 'Instruktur') ? 'menu-open' : "" ?>">
+                <a class="nav-link <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen' || $this->uri->uri_string() == 'Instruktur') ? 'active' : "" ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                     Master Menu
@@ -39,6 +39,12 @@ $segment2 = $this->uri->segment(2);
                 </p>
                 </a>
                 <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="<?= base_url('Instruktur')?>" class="nav-link <?= ($this->uri->uri_string() == 'Instruktur') ? 'active': "" ?>">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Instruktur</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="<?= base_url('Ruangan')?>" class="nav-link <?= ($this->uri->uri_string() == 'Ruangan') ? 'active': "" ?>">
                             <i class="far fa-circle nav-icon"></i>
