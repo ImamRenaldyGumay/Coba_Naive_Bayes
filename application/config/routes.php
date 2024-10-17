@@ -62,6 +62,13 @@ $route['Logout'] = "Auth/logout";
 $route['Admin'] = "Admin/Admin/index";
 // End Admin Routes
 
+// Start Pegawai Routes
+$route['Pegawai'] = "Admin/Pegawai/index";
+$route['TambahPegawai'] = 'Admin/Pegawai/tambahP';
+$route['EditPegawai/(:num)'] = 'Admin/Pegawai/editP/$1';
+$route['DeletePegawai/(:num)'] = 'Admin/Pegawai/hapusP/$1';
+// End Pegawai Routes
+
 // Start Ruangan Routes
 $route['Ruangan'] = 'Admin/Ruangan/index';
 $route['EditRuangan/(:num)'] = 'Admin/Ruangan/EditRuangan/$1';

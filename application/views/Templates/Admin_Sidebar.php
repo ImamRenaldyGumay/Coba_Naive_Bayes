@@ -23,6 +23,12 @@ $segment2 = $this->uri->segment(2);
                     <p>Dashboard</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="<?= site_url('Pegawai')?>" class="nav-link <?= ($segment1 == 'Pegawai' && $segment2 == "") ? 'active': ""; ?>">
+                    <i class="nav-icon fas fa-user-alt"></i>
+                    <p>Pegawai</p>
+                </a>
+            </li>
             <li class="nav-header">LABELS</li>
             <li class="nav-item <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'menu-open' : "" ?>">
                 <a class="nav-link <?= ($this->uri->uri_string() == 'Ruangan' || $this->uri->uri_string() == 'Departemen') ? 'active' : "" ?>">
