@@ -69,6 +69,13 @@ $route['EditPegawai/(:num)'] = 'Admin/Pegawai/editP/$1';
 $route['DeletePegawai/(:num)'] = 'Admin/Pegawai/hapusP/$1';
 // End Pegawai Routes
 
+// Start Workshop Routes
+$route['Workshop'] = "Admin/Workshop/index";
+$route['TambahWorkshop'] = 'Admin/Workshop/tambahW';
+$route['EditWorkshop/(:num)'] = 'Admin/Workshop/editW/$1';
+$route['DeleteWorkshop/(:num)'] = 'Admin/Workshop/hapusW/$1';
+// End Workshop Routes
+
 // Start Instruktur Routes
 $route['Instruktur'] = "Admin/Instruktur/index";
 $route['TambahInstruktur'] = 'Admin/Instruktur/tambahI';

@@ -7,16 +7,6 @@
       <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
   </div>
-  <?php if ($this->session->flashdata('message')): ?>
-    <script>
-      Swal.fire({
-        icon: 'success',
-        title: '<?= $this->session->flashdata('message'); ?>',
-        showConfirmButton: false,
-        timer: 1500
-      });
-    </script>
-  <?php endif; ?>
   <!-- ./wrapper -->
 
   <!-- jQuery -->
@@ -58,6 +48,28 @@
       });
     });
   </script>
+  <?php if ($this->session->flashdata('success_message')): ?>
+    <script>
+      Swal.fire({
+        icon: 'success',
+        title: '<?= $this->session->flashdata('success_message'); ?>',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    </script>
+<?php endif; ?>
+
+<?php if ($this->session->flashdata('error_message')): ?>
+    <script>
+      Swal.fire({
+        icon: 'error',
+        title: '<?= $this->session->flashdata('error_message'); ?>',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    </script>
+<?php endif; ?>
+
 
     <!-- Tambahkan SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

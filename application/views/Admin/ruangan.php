@@ -41,7 +41,7 @@
                   <?php foreach ($ruangan as $r): ?>
                       <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $r['nama_ruangan'] ?></td>
+                        <td><?= $r['nama'] ?></td>
                         <td><?= $r['kapasitas'] ?></td>
                         <td><?= $r['fasilitas'] ?></td>
                         <td><?= $r['lokasi'] ?></td>
@@ -74,8 +74,8 @@
         <form action="<?= site_url('TambahRuang') ?>" method="post">
           <div class="modal-body">
             <div class="form-group">
-              <label for="nama_ruangan">Nama Ruangan</label>
-              <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan" required>
+              <label for="nama">Nama Ruangan</label>
+              <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
             <div class="form-group">
               <label for="kapasitas">Kapasitas</label>
@@ -99,7 +99,6 @@
     </div>
   </div>
 <!-- End Model Tambah Ruangan -->
- 
 <!-- Start Edit Ruangan -->
   <?php foreach ($ruangan as $r) : ?>
     <div class="modal fade" id="editRuanganModal<?= $r['id']?>">
@@ -119,8 +118,8 @@
                 <input type="text" class="form-control" id="id" name="id" value="<?= $r['id']?>" readonly>
               </div>
               <div class="form-group">
-                <label for="nama_ruangan">Nama Ruangan</label>
-                <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan" value="<?= $r['nama_ruangan']?>" required>
+                <label for="nama">Nama Ruangan</label>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?= $r['nama']?>" required>
               </div>
               <div class="form-group">
                 <label for="kapasitas">Kapasitas Ruangan</label>
