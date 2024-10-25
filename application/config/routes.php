@@ -59,7 +59,7 @@ $route["Regis"] = "Auth/regis";
 $route['Logout'] = "Auth/logout";
 
 // Start Admin Routes
-$route['Admin'] = "Admin/Admin/index";
+$route['Admin'] = "Admin/Dashboard/index";
 // End Admin Routes
 
 // Start Pegawai Routes
@@ -97,10 +97,13 @@ $route['RuanganApi']['GET'] = 'Admin/Ruangan_Api/index';
 // Start Department Routes
 $route['Departemen'] = 'Admin/Departemen/index';
 $route['TambahDepartmen'] = 'Admin/Departemen/tambahD';
-$route['EditDepartmen/(:num)'] = 'Admin/Departemen/editD';
+$route['EditDepartmen/(:num)'] = 'Admin/Departemen/editD/$1';
  $route['HapusDepartemen/(:num)'] = 'Admin/Departemen/hapusD/$1';
 // End Department Routes
 
 // Start User Routes
 $route['User'] = 'Admin/User/index';
+$route['TambahUser'] = 'Admin/User/tambahU';
+$route['EditUser/(:num)'] = 'Admin/User/editU/$1';
+$route['HapusUser/(:num)'] = 'Admin/User/hapusU/$1';
 // End User Routes
