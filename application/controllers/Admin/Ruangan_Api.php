@@ -13,16 +13,16 @@ class Ruangan_Api extends CI_Controller
         $data = $this->RM->get_all_ruangan();
         if(!empty($data)){
             foreach ($data as $db_result) {
-                $id = $db_result['id'];
-                $nama = $db_result['nama'];
-                $kapasitas = $db_result['kapasitas'];
-                $fasilitas = $db_result['fasilitas'];
-                $lokasi = $db_result['lokasi'];
-                $pic = $db_result['pic'];
+                $id         = $db_result['id'];
+                $nama       = $db_result['nama'];
+                $kapasitas  = $db_result['kapasitas'];
+                $fasilitas  = $db_result['fasilitas'];
+                $lokasi     = $db_result['lokasi'];
+                $pic        = $db_result['pic'];
 
                 $data[] = [
                     'id' => $id,
-                    'nama_ruangan' => $nama_ruangan,
+                    'nama_ruangan' => $nama,
                     'kapasitas' => $kapasitas,
                     'fasilitas' => $fasilitas,
                     'lokasi' => $lokasi,
