@@ -14,7 +14,7 @@ class Ruangan_Api extends CI_Controller
         if(!empty($data)){
             foreach ($data as $db_result) {
                 $id = $db_result['id'];
-                $nama_ruangan = $db_result['nama_ruangan'];
+                $nama = $db_result['nama'];
                 $kapasitas = $db_result['kapasitas'];
                 $fasilitas = $db_result['fasilitas'];
                 $lokasi = $db_result['lokasi'];
