@@ -29,20 +29,55 @@ class Auth extends CI_Controller
     $email    = $this->input->post('email');
     $password = $this->input->post('password');
 
-    $admin = $this->AM->getUserUcl($email, $password);
+    // var_dump($email);
+    // die;
+
+    // Cek Login As Admin
+    $admin = $this->AM->cek_admin($email, $password);
+    var_dump($admin);
+    die;
     if($admin){
       $userdata = [
-        'email' => $admin['email'],
-        'nama' => $admin['name'],
-        'logged_in' => TRUE
+        'email'       => $admin['email'],
+        'nama'        => $admin['name'],
+        'user_type'   => 'Admin',
+        'logged_in'   => TRUE
       ];
-      $this->session->set_flashdata('flashdata', 'Selamat datang!');
       $this->session->set_userdata($userdata);
+      var_dump($userdata);
+      die;
       redirect('Admin');
-    }else{
-      $this->session->set_flashdata('flashdata_gagal', 'Username atau password salah!');
-      redirect('Login');
     }
+
+    // cek Login as pegawai
+    $pegawai = $this->AM->cek_pegawai($email, $password);
+    if($pegawai){
+      $userdata = [
+        'email'       => $pegawai['email'],
+        'nama'        => $pegawai['nama'],
+        'user_type'   => 'Pegawai',
+        'logged_in'   => TRUE
+      ];
+      $this->session->set_userdata($userdata);
+      redirect('Pegawai');
+    }
+
+    // Cek Login As Instruktur
+    $instruktur = $this->AM->cek_instruktur($email, $password);
+    if($instruktur){
+      $userdata = [
+        'email'       => $instruktur['email'],
+        'nama'        => $instruktur['nama'],
+        'user_type'   => 'Instruktur',
+        'logged_in'   => TRUE
+      ];
+      $this->session->set_userdata($userdata);
+      redirect('Instruktur');
+    }
+
+    // jika gagal Login
+    $this->session->set_flashdata('message', 'Login gagal, username atau password salah!');
+    redirect('Login');
   }
 
   public function regis()
