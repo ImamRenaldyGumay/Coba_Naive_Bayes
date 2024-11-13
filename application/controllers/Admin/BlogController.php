@@ -15,14 +15,18 @@ class BlogController extends CI_Controller {
     // API untuk mendapatkan semua blog
     public function get_blogs() {
         $data = $this->Blog_model->get_all_blogs();
-        echo json_encode($data);
+        if ($data) {
+            echo json_encode(['status' => 'success', 'data' => $data]);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'No blogs found']);
+        }
     }
 
     // API untuk mendapatkan blog berdasarkan ID
     public function get_blog($id) {
         $data = $this->Blog_model->get_blog_by_id($id);
         if ($data) {
-            echo json_encode($data);
+            echo json_encode(['status' => 'success', 'data' => $data]);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Blog not found']);
         }
