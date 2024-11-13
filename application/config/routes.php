@@ -91,7 +91,7 @@ $route['HapusRuangan/(:num)'] = 'Admin/Ruangan/DeleteRuangan/$1';
 // End Ruangan Routes
 
 // Start Ruangan Api
-$route['RuanganApi'] = 'Admin/Ruangan_Api/index';
+$route['RuanganApi']['GET'] = 'Admin/Ruangan_Api/index';
 // End Ruangan Api
 
 // Start Department Routes

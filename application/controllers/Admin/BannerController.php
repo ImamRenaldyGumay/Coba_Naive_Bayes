@@ -6,6 +6,7 @@ class BannerController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Banner_Model', 'BannerModel');
+        $this->load->helper('url');
     }
 
     public function index() {
