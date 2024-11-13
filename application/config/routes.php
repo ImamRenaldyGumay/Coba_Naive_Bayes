@@ -91,7 +91,7 @@ $route['HapusRuangan/(:num)'] = 'Admin/Ruangan/DeleteRuangan/$1';
 // End Ruangan Routes
 
 // Start Ruangan Api
-$route['RuanganApi']['GET'] = 'Admin/Ruangan_Api/index';
+$route['RuanganApi'] = 'Admin/Ruangan_Api/index';
 // End Ruangan Api
 
 // Start Department Routes
@@ -108,4 +108,4 @@ $route['EditUser/(:num)'] = 'Admin/User/editU/$1';
 $route['HapusUser/(:num)'] = 'Admin/User/hapusU/$1';
 // End User Routes
 
-$route['banners'] = 'BannerController/index';
+$route['banners']['GET'] = 'Admin/BannerController/index';
