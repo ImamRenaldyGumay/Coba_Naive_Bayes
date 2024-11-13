@@ -7,6 +7,9 @@ class BannerController extends CI_Controller {
         parent::__construct();
         $this->load->model('Banner_Model', 'BannerModel');
         $this->load->helper('url');
+        header('Access-Control-Allow-Origin: *'); // atau set ke domain spesifik
+        header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+        header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
     }
 
     public function index() {
