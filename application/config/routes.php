@@ -107,3 +107,5 @@ $route['TambahUser'] = 'Admin/User/tambahU';
 $route['EditUser/(:num)'] = 'Admin/User/editU/$1';
 $route['HapusUser/(:num)'] = 'Admin/User/hapusU/$1';
 // End User Routes
+
+$route['banners'] = 'BannerController/index';
