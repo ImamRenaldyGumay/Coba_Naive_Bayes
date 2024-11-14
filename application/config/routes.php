@@ -111,7 +111,7 @@ $route['HapusUser/(:num)'] = 'Admin/User/hapusU/$1';
 $route['banners']['GET'] = 'Admin/BannerController/index';
 
 $route['api/blogs'] = 'Admin/BlogController/get_blogs';
-$route['api/blogs/detail/(:num)'][] = 'Admin/BlogController/get_blog/$1';
+$route['api/blogs/detail/(:num)']['POST'] = 'Admin/BlogController/get_blog/$1';
 $route['api/blog'] = 'Admin/BlogController/add_blog';
 $route['api/blog/(:num)'] = 'Admin/BlogController/update_blog/$1';
 $route['api/blog/delete/(:num)'] = 'Admin/BlogController/delete_blog/$1';
