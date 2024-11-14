@@ -16,9 +16,25 @@ class BlogController extends CI_Controller {
     public function get_blogs() {
         $data = $this->Blog_model->get_all_blogs();
         if ($data) {
-            echo json_encode(['status' => 'success', 'data' => $data]);
+            $this->output
+                ->set_status_header(200)
+                ->set_content_type('application/json', 'utf-8')
+                ->set_output(json_encode([
+                    'status' => '200',
+                    'data' => $banners
+                ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))
+                ->_display();
+            exit;
         } else {
-            echo json_encode(['status' => 'error', 'message' => 'No blogs found']);
+            $this->output
+                ->set_status_header(500)
+                ->set_content_type('application/json', 'utf-8')
+                ->set_output(json_encode([
+                    'status' => '500',
+                    'message' => 'Failed to retrieve data: ' . $e->getMessage()
+                ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))
+                ->_display();
+            exit;
         }
     }
 
