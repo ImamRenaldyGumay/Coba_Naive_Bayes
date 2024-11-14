@@ -21,7 +21,7 @@ class BlogController extends CI_Controller {
                 ->set_content_type('application/json', 'utf-8')
                 ->set_output(json_encode([
                     'status' => '200',
-                    'data' => $banners
+                    'data' => $data
                 ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES))
                 ->_display();
             exit;
