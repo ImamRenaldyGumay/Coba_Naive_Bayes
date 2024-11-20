@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ApiController extends CI_Controller {
 
-    public function getData() {
+    public function index() {
         // Mengatur header untuk output JSON
         headers('Content-Type: application/json');
         

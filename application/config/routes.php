@@ -116,4 +116,4 @@ $route['api/blog'] = 'Admin/BlogController/add_blog';
 $route['api/blog/(:num)'] = 'Admin/BlogController/update_blog/$1';
 $route['api/blog/delete/(:num)'] = 'Admin/BlogController/delete_blog/$1';
 
-$route['api/data'] = 'Adnin/ApiController/getData';
+$route['api/data'] = 'Adnin/ApiController/index';
