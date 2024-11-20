@@ -44,7 +44,7 @@ class BannerController extends CI_Controller {
     public function data() {
         // Data JSON yang ingin ditampilkan
         $response = [
-            "Status" => 200,
+            "status" => 200,
             "data" => [
                 "id" => "1",
                 "title" => "Headline",
