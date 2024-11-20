@@ -109,6 +109,7 @@ $route['HapusUser/(:num)'] = 'Admin/User/hapusU/$1';
 // End User Routes
 
 $route['banners']['GET'] = 'Admin/BannerController/index';
+$route['banners/blog'] = 'Admin/BannerController/data';
 
 $route['api/blogs'] = 'Admin/BlogController/get_blogs';
 $route['api/blogs/detail/(:num)']['POST'] = 'Admin/BlogController/get_blog/$1';
