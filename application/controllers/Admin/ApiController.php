@@ -9,7 +9,7 @@ class ApiController extends CI_Controller {
         
         // Mengisi data sesuai dengan format yang diinginkan
         $response = array(
-            "Status" => 200,
+            "status" => 200,
             "data" => array(
                 "id" => "1",
                 "title" => "Headline",
