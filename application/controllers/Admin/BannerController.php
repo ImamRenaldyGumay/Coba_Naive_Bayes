@@ -55,7 +55,7 @@ class BannerController extends CI_Controller {
                 "author" => "Randy Louhenapessy",
                 "jbtauthor" => "Sales",
                 "image" => "assets/png/banner/banner_career.png",
-                "tags" => "Big Data, SaaS, Teknologi",
+                "tags" => ['Data', 'Business', 'Tech'],
                 "date" => "2024-11-20",
                 "related_content" => [
                     [
