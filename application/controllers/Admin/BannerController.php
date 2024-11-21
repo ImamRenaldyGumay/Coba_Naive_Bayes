@@ -81,6 +81,14 @@ class BannerController extends CI_Controller {
                         "tags" => "AI",
                         "sinopsis" => "Sinopsis untuk artikel terkait ketiga",
                         "links" => "https://example.com/3"
+                    ],
+                    [
+                        "id" => 5,
+                        "title" => "Related Headline 4",
+                        "image" => "assets/png/banner/banner_career.png",
+                        "tags" => "AISSSS",
+                        "sinopsis" => "Sinopsis untuk artikel terkait ketiga",
+                        "links" => "https://example.com/3"
                     ]
                 ]
             ]
