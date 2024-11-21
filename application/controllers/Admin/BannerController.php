@@ -53,6 +53,7 @@ class BannerController extends CI_Controller {
                               <p>Tidak perlu lagi membeli perangkat lunak mahal dan rumit yang butuh instalasi panjang. Dengan SaaS, semuanya bisa diakses kapan saja dan di mana saja melalui internet.</p>
                               <p>Dalam artikel ini, kita akan menjelajahi beberapa contoh nyata tentang penerapan SaaS di dunia bisnis dan bagaimana solusi ini mengubah cara perusahaan menjalankan operasionalnya.</p>",
                 "author" => "Maspren",
+                "jbtauthor" => "Sales",
                 "image" => "assets/png/banner/banner_career.png",
                 "tags" => "Big Data, SaaS, Teknologi",
                 "date" => "2024-11-20",
@@ -60,7 +61,7 @@ class BannerController extends CI_Controller {
                     [
                         "id" => 2,
                         "title" => "Related Headline 1",
-                        "image" => "assets/png/banner/banner_related_1.png",
+                        "image" => "assets/png/banner/banner_career.png",
                         "tags" => "Big Data",
                         "sinopsis" => "Sinopsis untuk artikel terkait pertama",
                         "links" => "https://example.com/1"
@@ -68,7 +69,7 @@ class BannerController extends CI_Controller {
                     [
                         "id" => 3,
                         "title" => "Related Headline 2",
-                        "image" => "assets/png/banner/banner_related_2.png",
+                        "image" => "assets/png/banner/banner_career.png",
                         "tags" => "Machine Learning",
                         "sinopsis" => "Sinopsis untuk artikel terkait kedua",
                         "links" => "https://example.com/2"
@@ -76,7 +77,7 @@ class BannerController extends CI_Controller {
                     [
                         "id" => 4,
                         "title" => "Related Headline 3",
-                        "image" => "assets/png/banner/banner_related_3.png",
+                        "image" => "assets/png/banner/banner_career.png",
                         "tags" => "AI",
                         "sinopsis" => "Sinopsis untuk artikel terkait ketiga",
                         "links" => "https://example.com/3"
