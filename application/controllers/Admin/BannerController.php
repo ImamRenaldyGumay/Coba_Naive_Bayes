@@ -47,7 +47,7 @@ class BannerController extends CI_Controller {
             "status" => 200,
             "data" => [
                 "id" => "1",
-                "title" => "Headline",
+                "title" => "Contoh Implementasi SaaS yang Mengubah Cara Kerja Bisnis",
                 "content" => "<h2><strong>Apa Itu SaaS dan Mengapa Perusahaan Membutuhkannya?</strong></h2>
                               <p>IDstar – SaaS (Software as a Service) kini telah menjadi bagian penting dalam transformasi digital banyak bisnis. Kita mungkin tidak selalu menyadari, tetapi SaaS diam-diam mengubah cara kita bekerja setiap hari—mulai dari manajemen data hingga komunikasi tim dan bahkan layanan pelanggan.</p>
                               <p>Tidak perlu lagi membeli perangkat lunak mahal dan rumit yang butuh instalasi panjang. Dengan SaaS, semuanya bisa diakses kapan saja dan di mana saja melalui internet.</p>
