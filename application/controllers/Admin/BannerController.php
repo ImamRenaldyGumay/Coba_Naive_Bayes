@@ -63,7 +63,7 @@ class BannerController extends CI_Controller {
                         "title" => "Related Headline 1",
                         "image" => "assets/png/banner/banner_career.png",
                         "tags" => "Big Data",
-                        "sinopsis" => "AI mengubah dunia melalui inovasi di berbagai sektor, meski menghadapi tantangan etika. Kolaborasi penting untuk masa depan yang adil.",
+                        "sinopsis" => "Over the past year, Volosoft has undergone many changes! After months of preparation and some hard work, we moved to our new",
                         "links" => "https://example.com/1"
                     ],
                     [
