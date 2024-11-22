@@ -63,7 +63,7 @@ class BannerController extends CI_Controller {
                         "title" => "Related Headline 1",
                         "image" => "assets/png/banner/banner_career.png",
                         "tags" => "Big Data",
-                        "sinopsis" => "Sinopsis untuk artikel terkait pertama",
+                        "sinopsis" => "AI mengubah dunia melalui inovasi di berbagai sektor, meski menghadapi tantangan etika. Kolaborasi penting untuk masa depan yang adil.",
                         "links" => "https://example.com/1"
                     ],
                     [
