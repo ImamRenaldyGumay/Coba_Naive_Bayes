@@ -29,13 +29,9 @@ class Auth extends CI_Controller
     $email    = $this->input->post('email');
     $password = $this->input->post('password');
 
-    // var_dump($email);
-    // die;
-
-    // Cek Login As Admin
     $admin = $this->AM->cek_admin($email, $password);
-    var_dump($admin);
-    die;
+    // var_dump($admin);
+    // die;
     if($admin){
       $userdata = [
         'email'       => $admin['email'],
@@ -44,8 +40,6 @@ class Auth extends CI_Controller
         'logged_in'   => TRUE
       ];
       $this->session->set_userdata($userdata);
-      var_dump($userdata);
-      die;
       redirect('Admin');
     }
 

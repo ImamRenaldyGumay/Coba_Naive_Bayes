@@ -6,10 +6,10 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         // $this->load->model('Admin_model');
         // Pengecekan sesi, apakah user sudah login atau belum
-        if (!$this->session->userdata('logged_in')) {
-            // Jika user belum login, redirect ke halaman login
-            redirect('Login', 'refresh');
-        }
+        // if (!$this->session->userdata('logged_in')) {
+        //     // Jika user belum login, redirect ke halaman login
+        //     redirect('Login', 'refresh');
+        // }
         $this->load->helper('url');
     }
 
